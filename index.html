@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSM Voting Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav img {
+      height: 60px;
+      margin-right: 1rem;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    .form-container {
+      width: 80%;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      width: 100%;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .candidates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+
+    .candidate {
+      flex: 1 1 calc(50% - 1rem);
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .candidate input[type="radio"] {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    .candidate img.photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .candidate img.symbol {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    .candidate .name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .submit-button {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 0.75rem;
+      background: #27ae60;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {x
+      .candidates {
+        flex-direction: column;
+      }
+      .candidate {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="1000047722.webp" alt="TSM Logo">
+    <h1>تعليم الصبيان جيركل - TSM</h1>
+  </nav>
+
+  <div class="form-container">
+    <form name="submit-to-google-sheets">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="class">Class</label>
+        <input type="text" id="class" name="class" required>
+      </div>
+      <br><h2 style="text-align: center;">Madrasa Leader</h2><br>
+      <div class="candidates">
+        <label class="candidate">
+          <input type="radio" name="Leader_vote" value="Muhammed Irfan.M" required>
+          <img src="Irfan.jpg" class="photo" alt="Candidate 1">
+          <img src="irfanl.jpg" class="symbol" alt="Symbol 1">
+          <div class="name">Muhammed Irfan.M</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Leader_vote" value="Muhammed Swalih.C">
+          <img src="candidate2.jpg" class="photo" alt="Candidate 2">
+          <img src="swalihl.jpg" class="symbol" alt="Symbol 2">
+          <div class="name">Muhammed Swalih.C</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Leader_vote" value="Fathima Sana.Mk">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 3">
+          <img src="sana mk.jpg" class="symbol" alt="Symbol 3">
+          <div class="name">Fathima Sana.Mk</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Leader_vote" value="Fathima Labeeba.P">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 4">
+          <img src="labbeba.jpg" class="symbol" alt="Symbol 4">
+          <div class="name">Fathima Labeeba.P</div>
+        </label>
+      </div>
+
+      <br><h2 style="text-align: center;">Library Leader</h2><br>
+      <div class="candidates">
+        <label class="candidate">
+          <input type="radio" name="Library_vote" value="Muhammed Musthaq.M" required>
+          <img src="musthaq.jpg" class="photo" alt="Candidate 1">
+          <img src="musthaql.jpg" class="symbol" alt="Symbol 1">
+          <div class="name">Muhammed Musthaq.M</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Library_vote" value="Muhammed younus.Mk">
+          <img src="younus.jpg" class="photo" alt="Candidate 2">
+          <img src="younusl.jpg" class="symbol" alt="Symbol 2">
+          <div class="name">Muhammed younus.Mk</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Library_vote" value="Aslaha.M">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 3">
+          <img src="Aslaha.jpg" class="symbol" alt="Symbol 3">
+          <div class="name">Aslaha.M</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Library_vote" value="Fathima Hiba.C">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 4">
+          <img src="hiba c.jpg" class="symbol" alt="Symbol 4">
+          <div class="name">Fathima Hiba.C</div>
+        </label>
+      </div>
+      
+      <br><h2 style="text-align: center;">Garden Leader</h2><br>
+      <div class="candidates">
+
+
+        <label class="candidate">
+          <input type="radio" name="Garden_vote" value="Muhammed Ajmal.PP">
+          <img src="candidate3.jpg" class="photo" alt="Candidate 3">
+          <img src="ajmall.jpg" class="symbol" alt="Symbol 3">
+          <div class="name">Muhammed Ajmal.PP</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Garden_vote" value="Muhammed Nabih.C" required>
+          <img src="candidate1.jpg" class="photo" alt="Candidate 1">
+          <img src="nabihl.jpg" class="symbol" alt="Symbol 1">
+          <div class="name">Muhammed Nabih.C</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Garden_vote" value="Fathima safa.C">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 4">
+          <img src="safa.jpg" class="symbol" alt="Symbol 4">
+          <div class="name">Fathima safa.C</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Garden_vote" value="Shidha Fathima.M">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 2">
+          <img src="6493.png_860.png" class="symbol" alt="Symbol 2">
+          <div class="name">Shidha Fathima.M</div>
+        </label>
+
+
+     
+      </div>
+
+      <br><h2 style="text-align: center;">Cleaning Leader</h2><br>
+      <div class="candidates">
+
+
+        <label class="candidate">
+          <input type="radio" name="Cleaning_Leader_vote" value="Muhammed Aslam.M">
+          <img src="aslam.jpg" class="photo" alt="Candidate 3">
+          <img src="aslaml.jpg" class="symbol" alt="Symbol 3">
+          <div class="name">Muhammed Aslam.M</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Cleaning_Leader_vote" value="Muhammed Sinan.PT" required>
+          <img src="sinanpt.jpg" class="photo" alt="Candidate 1">
+          <img src="sinanptl.jpg" class="symbol" alt="Symbol 1">
+          <div class="name">Muhammed Sinan.PT</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Cleaning_Leader_vote" value="Fathima Lubana.P">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 4">
+          <img src="lUBANA.jpg" class="symbol" alt="Symbol 4">
+          <div class="name">Fathima Lubana.P</div>
+        </label>
+
+        <label class="candidate">
+          <input type="radio" name="Cleaning_Leader_vote" value="Najiya.CP">
+          <img src="6493.png_860.png" class="photo" alt="Candidate 2">
+          <img src="najiya.jpg" class="symbol" alt="Symbol 2">
+          <div class="name">Najiya.CP</div>
+        </label>
+
+        
+      </div>
+
+      <button type="submit" class="submit-button">Submit Vote</button>
+   
+      <span id="success"></span>
+
+    </form>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwAsa9XXbQqMCiLgPsOmHzFtqy-pak50x_zY1eTKJCaJ3XZ2cfCcqcy9IYZdV8y8crl/exec'
+      const form = document.forms['submit-to-google-sheets']
+      const success = document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            alert("Vote successfully done");
+
+            setTimeout(function(){
+              success.innerHTML="";
+            },5000)
+              form.reset();
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+  </div> 
+</body>
+</html>
