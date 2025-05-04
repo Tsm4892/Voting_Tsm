@@ -5,127 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSM Voting Form</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
 
-    body {
-      background-color: #f4f6f8;
-      color: #333;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    nav img {
-      height: 60px;
-      margin-right: 1rem;
-    }
-
-    nav h1 {
-      font-size: 1.8rem;
-      color: #2c3e50;
-    }
-
-    .form-container {
-      width: 80%;
-      margin: 2rem auto;
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .form-group label {
-      width: 100%;
-      font-weight: 600;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .candidates {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: space-between;
-    }
-
-    .candidate {
-      flex: 1 1 calc(50% - 1rem);
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      position: relative;
-    }
-
-    .candidate input[type="radio"] {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-    }
-
-    .candidate img.photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 0.5rem;
-    }
-
-    .candidate img.symbol {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 0.5rem;
-    }
-
-    .candidate .name {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .submit-button {
-      margin-top: 2rem;
-      width: 100%;
-      padding: 0.75rem;
-      background: #27ae60;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {x
-      .candidates {
-        flex-direction: column;
-      }
-      .candidate {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -154,7 +34,7 @@
 
         <label class="candidate">
           <input type="radio" name="Leader_vote" value="Muhammed Swalih.C">
-          <img src="candidate2.jpg" class="photo" alt="Candidate 2">
+          <img src="swalih.jpg" class="photo" alt="Candidate 2">
           <img src="swalihl.jpg" class="symbol" alt="Symbol 2">
           <div class="name">Muhammed Swalih.C</div>
         </label>
@@ -211,14 +91,14 @@
 
         <label class="candidate">
           <input type="radio" name="Garden_vote" value="Muhammed Ajmal.PP">
-          <img src="candidate3.jpg" class="photo" alt="Candidate 3">
+          <img src="Ajmal.jpg" class="photo" alt="Candidate 3">
           <img src="ajmall.jpg" class="symbol" alt="Symbol 3">
           <div class="name">Muhammed Ajmal.PP</div>
         </label>
 
         <label class="candidate">
           <input type="radio" name="Garden_vote" value="Muhammed Nabih.C" required>
-          <img src="candidate1.jpg" class="photo" alt="Candidate 1">
+          <img src="Nabih.jpg" class="photo" alt="Candidate 1">
           <img src="nabihl.jpg" class="symbol" alt="Symbol 1">
           <div class="name">Muhammed Nabih.C</div>
         </label>
@@ -233,7 +113,7 @@
         <label class="candidate">
           <input type="radio" name="Garden_vote" value="Shidha Fathima.M">
           <img src="6493.png_860.png" class="photo" alt="Candidate 2">
-          <img src="6493.png_860.png" class="symbol" alt="Symbol 2">
+          <img src="shidhal.jpg" class="symbol" alt="Symbol 2">
           <div class="name">Shidha Fathima.M</div>
         </label>
 
@@ -282,24 +162,24 @@
 
     </form>
 
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwAsa9XXbQqMCiLgPsOmHzFtqy-pak50x_zY1eTKJCaJ3XZ2cfCcqcy9IYZdV8y8crl/exec'
-      const form = document.forms['submit-to-google-sheets']
-      const success = document.getElementById('success')
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            alert("Vote successfully done");
+      <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwAsa9XXbQqMCiLgPsOmHzFtqy-pak50x_zY1eTKJCaJ3XZ2cfCcqcy9IYZdV8y8crl/exec'
+    const form = document.forms['submit-to-google-sheets']
+    const success = document.getElementById('success')
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert("Vote successfully done");
 
-            setTimeout(function(){
-              success.innerHTML="";
-            },5000)
-              form.reset();
-          })
-          .catch(error => console.error('Error!', error.message))
-      })
-    </script>
+          setTimeout(function(){
+            success.innerHTML="";
+          },5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+      </script>
 
   </div> 
 </body>
